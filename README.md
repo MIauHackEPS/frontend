@@ -1,46 +1,20 @@
-# Astro Starter Kit: Basics
+## Inspiració
+Ens vam inspirar en el problema donat i en com podriem dissenyar un servei per resoldre'l, vam dur a terme diferents mètodes per acabar fent un projecte que permetés fer aquesta implementació. 
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+## Què fa
+Tenim una web funcional en la què pots crear i administrar clústers de diferent tipus (Docker Swarm, Kubernetes...) i els seus nodes.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Com ho hem construït
+Ens hem dividit el treball de manera que siguent 2 en el equip, un feia el frontend i l'altre el backend. Quan ha començat a tenir forma i a funcionar hem passat a pulir el frontend i connectar-lo amb el backend i al final hem creat una "empresa" ficticia propietaria de la web i hem preparat la presentació. 
 
-## 🚀 Project Structure
+## Reptes amb què ens hem trobat
+Durant el desenvolupament del projecte ens hem trobat molts problemes i reptes, ja que som molt inexperts i un de nosaltres abans de començar només sabia utilitzar un llenguatge de programació. Hem hagut d'aprendre moltíssim durant aquestes hores i no només hem après a escriure codi sinó també a com organitzar-nos millor en aquest tipus de reptes i projectes.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Fites de les quals estem orgullosos
+Estem molt orgullosos del que hem aconseguit independentment del resultat, ja que hem sigut capaços de seguir endavant en moments on no sortia res, no sabíem perquè no funcionava i estavem molt frustrats, de manera que hem superat per molt les nostres expectatives del que seríem capaços d'aconseguir durant aquesta HackEPS. Com a estudiants de primer any de carrera d'enginyeria informàtica sense pràcticament coneixements previs estem molt satisfets d'aconseguir una web funcional, encara que ens hagués agradat implementar alguna funció més, però per falta de temps no ha sigut possible. 
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+## Què hem après
+Hem après a treballar en equip i a com dividir-nos un treball d'aquesta magnitud segons les nostres habilitats individuals per aprofitar el màxim el temps pero siguent capaços de treballar conjuntament en cas de què fos necessari. Hem après a crear webs ben desenvolupades amb astro utilitzant html, css, tailwind i javascript. També hem après sobre connexions entre frontend i backend, APIs, etc.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Què vindrà després per a CloudWeave
+A CloudWeave volem anar molt més enllà de ser només una eina per crear i administrar clústers. El nostre següent pas és convertir-nos en una plataforma d’orquestració completa que permeti als equips desplegar, monitorar i optimitzar les seves aplicacions de manera intel·ligent.

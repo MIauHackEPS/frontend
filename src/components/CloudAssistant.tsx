@@ -10,6 +10,7 @@ interface Message {
 export default function CloudAssistant() {
     const [isOpen, setIsOpen] = useState(false);
     const [showNotification, setShowNotification] = useState(true);
+    const [showBubble, setShowBubble] = useState(true);
     const [messages, setMessages] = useState<Message[]>([
         { role: 'ai', content: 'Hola! Soy tu asistente de infraestructuras en el Cloud. ¿En qué puedo ayudarte hoy?' },
         { role: 'ai', content: 'Puedes pedirme que cree un cluster o una máquina virtual. Por ejemplo: "Crea un cluster con 3 máquinas" o "Crea una máquina virtual con 2 vCPUs y 4 GB de RAM".' },
@@ -27,6 +28,14 @@ export default function CloudAssistant() {
         scrollToBottom();
     }, [messages, isOpen]);
 
+    // Auto-hide message bubble after 10 seconds
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowBubble(false);
+        }, 10000); // 10 seconds
+
+        return () => clearTimeout(timer);
+    }, []); // Empty dependency array means this runs once on mount
     const handleSend = async () => {
         if (!input.trim()) return;
 
@@ -272,11 +281,31 @@ export default function CloudAssistant() {
                 </div>
             </div>
 
+            {/* Message Bubble */}
+            {showBubble && showNotification && !isOpen && (
+                <div className="mb-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg shadow-lg flex items-center gap-2 pointer-events-auto animate-bounce">
+                    <span className="text-sm font-medium">¡Tienes un mensaje!</span>
+                    <button
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            setShowBubble(false);
+                        }}
+                        className="text-white/80 hover:text-white transition-colors" >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            )}
+
             {/* FAB */}
             <button
                 onClick={() => {
                     setIsOpen(!isOpen);
-                    if (!isOpen) setShowNotification(false);
+                    if (!isOpen) {
+                        setShowNotification(false);
+                        setShowBubble(false);
+                    }
                 }}
                 className={`
                     pointer-events-auto

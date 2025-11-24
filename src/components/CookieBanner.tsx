@@ -98,7 +98,7 @@ export default function CookieBanner() {
                                         <div className="w-2 h-2 bg-purple-500 rounded-full mt-1.5 flex-shrink-0"></div>
                                         <div>
                                             <p className="font-medium text-white">Burbuja de chat (chatBubbleDismissed)</p>
-                                            <p className="text-gray-400 text-xs mt-2">Recuerda si has cerrado el mensaje del asistente (30 días)</p>
+                                            <p className="text-gray-400 text-xs mt-2">Recuerda si has cerrado el mensaje del asistente (7 días)</p>
                                         </div>
                                     </div>
                                 </div>

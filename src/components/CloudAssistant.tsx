@@ -28,14 +28,6 @@ export default function CloudAssistant() {
         scrollToBottom();
     }, [messages, isOpen]);
 
-    // Auto-hide message bubble after 10 seconds
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowBubble(false);
-        }, 10000); // 10 seconds
-
-        return () => clearTimeout(timer);
-    }, []); // Empty dependency array means this runs once on mount
     const handleSend = async () => {
         if (!input.trim()) return;
 

@@ -138,7 +138,7 @@ export default function ClusterManager() {
                 </div>
                 <div className="overflow-y-auto flex-1 p-2 space-y-2">
                     {clusters.length === 0 && !loading && (
-                        <p className="text-center text-gray-400 text-sm py-4">No hay clusters activos</p>
+                        <p className="text-center text-gray-400 text-sm py-4">Actualmente no hay clusters activos</p>
                     )}
                     {clusters.map(cluster => (
                         <div

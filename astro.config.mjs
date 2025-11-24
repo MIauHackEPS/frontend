@@ -12,7 +12,7 @@ export default defineConfig({
     server: {
       proxy: {
         '/api': {
-          target: 'http://127.0.0.1:8001',
+          target: process.env.API_URL || 'http://127.0.0.1:8001',
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/api/, ''),
         },

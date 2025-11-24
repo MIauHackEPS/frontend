@@ -9,8 +9,11 @@ interface Message {
 
 export default function CloudAssistant() {
     const [isOpen, setIsOpen] = useState(false);
+    const [showNotification, setShowNotification] = useState(true);
     const [messages, setMessages] = useState<Message[]>([
-        { role: 'ai', content: 'Hola! Soy tu asistente de infraestructura. ¿En qué puedo ayudarte hoy?' }
+        { role: 'ai', content: 'Hola! Soy tu asistente de infraestructuras en el Cloud. ¿En qué puedo ayudarte hoy?' },
+        { role: 'ai', content: 'Puedes pedirme que cree un cluster o una máquina virtual. Por ejemplo: "Crea un cluster con 3 máquinas" o "Crea una máquina virtual con 2 vCPUs y 4 GB de RAM".' },
+        { role: 'ai', content: 'Actualmente funciono con AWS y Google Cloud Platform.' }
     ]);
     const [input, setInput] = useState('');
     const [loading, setLoading] = useState(false);
@@ -146,7 +149,7 @@ export default function CloudAssistant() {
                 className={`
                     pointer-events-auto
                     bg-gray-900/95 backdrop-blur-xl border border-white/10 shadow-2xl rounded-2xl
-                    w-[380px] h-[500px] mb-4 flex flex-col overflow-hidden
+                    w-[350px] h-[460px] mb-4 flex flex-col overflow-hidden
                     transition-all duration-300 origin-bottom-right
                     ${isOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 translate-y-4 pointer-events-none'}
                 `}
@@ -271,14 +274,24 @@ export default function CloudAssistant() {
 
             {/* FAB */}
             <button
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={() => {
+                    setIsOpen(!isOpen);
+                    if (!isOpen) setShowNotification(false);
+                }}
                 className={`
                     pointer-events-auto
                     w-14 h-14 rounded-full shadow-2xl flex items-center justify-center
                     transition-all duration-300 hover:scale-110 active:scale-95
                     ${isOpen ? 'bg-red-500 rotate-45' : 'bg-gradient-to-r from-blue-600 to-purple-600'}
+                    relative
                 `}
             >
+                {showNotification && !isOpen && (
+                    <span className="absolute -top-1 -right-1 flex h-5 w-5">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-5 w-5 bg-red-500 border-2 border-gray-900"></span>
+                    </span>
+                )}
                 <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
                 </svg>

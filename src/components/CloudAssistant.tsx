@@ -309,7 +309,7 @@ export default function CloudAssistant() {
                         onClick={(e) => {
                             e.stopPropagation();
                             setShowBubble(false);
-                            setCookie('chatBubbleDismissed', 'true', 7); // Configuración de la cookie para que expire en 7 días
+                            setCookie('chatBubbleDismissed', 'true', 1); // Configuración de la cookie para que expire en 1 día
                         }}
                         className="text-white/80 hover:text-white transition-colors" >
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -326,7 +326,7 @@ export default function CloudAssistant() {
                     if (!isOpen) {
                         setShowNotification(false);
                         setShowBubble(false);
-                        setCookie('chatBubbleDismissed', 'true', 7); // Configuración de la cookie para que expire en 7 días
+                        setCookie('chatBubbleDismissed', 'true', 1); // Configuración de la cookie para que expire en 1 día
                     }
                 }}
                 className={`

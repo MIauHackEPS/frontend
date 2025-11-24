@@ -1,0 +1,58 @@
+---
+import NavBar from './NavBar.astro';
+---
+<div id="portada">
+    <img
+        id="background"
+        src="../../servidores.jpg"
+        alt=""
+		class="blur-[6px]"
+        fetchpriority="high"
+    />
+    <NavBar />
+    <main>
+        <div class="portada">
+        <section id="hero">
+            <img
+                id="logo"
+                class="flex justify-center mx-auto h-40 w-40"
+                src="../../logo.png"
+                alt="Logo"
+            />
+            <h1 id="Títol" class="text-center text-5xl md:text-6xl mt-4 font-bold text-white w-full px-4 drop-shadow-lg">
+                Cluster Multi-Cloud
+            </h1>
+            <h2
+                id="eslogan"
+                class="text-center align-items-center text-white/90 text-xl md:text-2xl mt-2 w-full px-4 italic font-light tracking-wide">
+                Soluciones en la nube, resultados en la tierra.
+            </h2>
+        </section>
+        </div>
+    </main>
+</div>
+<style>
+#portada,
+	#cos {
+		position: relative;
+		overflow: hidden;
+	}
+		#hero {
+		display: flex;
+		align-items: start;
+		flex-direction: column;
+		justify-content: center;
+		padding: 16px;
+	}
+	#background,
+	#background_1 {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: -1;
+		transform-origin: center;
+	}
+</style>

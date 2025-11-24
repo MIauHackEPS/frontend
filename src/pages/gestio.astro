@@ -3,44 +3,11 @@ import astroLogo from "../assets/astro.svg";
 import background from "../assets/background.svg";
 import Layout from '../layouts/Layout.astro';
 import ClusterManager from '../components/ClusterManager';
+import NavBar from "../components/NavBar.astro";
 // Force rebuild
 ---
 <Layout>
-<div id="portada">
-    <img
-        id="background"
-        src="../../servidores.jpg"
-        alt=""
-        fetchpriority="high"
-    />
-    <nav class="bg-gray-800 p-4">
-  		<ul class="flex justify-center space-x-8">
-    		<li><a href="/" class="text-white hover:text-gray-300">Inicio</a></li>
-    		<li><a href="/create" class="text-white hover:text-gray-300">Crear</a></li>
-    		<li><a href="/gestio" class="text-white hover:text-gray-300">Gestión</a></li>
-  		</ul>
-	</nav>
-    <main>
-        <div class="portada">
-        <section id="hero">
-            <img
-                id="logo"
-                class="flex justify-center mx-auto h-40 w-40"
-                src="../../logo.png"
-                alt="Logo"
-            />
-            <h1 id="Títol" class="text-center text-5xl md:text-6xl mt-4 font-bold text-white w-full px-4 drop-shadow-lg">
-                Cluster Multi-Cloud
-            </h1>
-            <h2
-                id="eslogan"
-                class="text-center align-items-center text-white/90 text-xl md:text-2xl mt-2 w-full px-4 italic font-light tracking-wide">
-                Soluciones en la nube, resultados en la tierra.
-            </h2>
-        </section>
-        </div>
-    </main>
-</div>
+
 
 <div class="flex h-[calc(100vh-200px)] bg-gray-100 p-6">
     <div class="w-full h-full">
